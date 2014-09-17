@@ -66,7 +66,7 @@ tidyData <- aggregate(data, by=list(Group.activity=data$activity, Group.subject=
 
 # remove columns activity and subject, since we have new Group.activity & Group.subject variables
 tidyData$activity <- NULL
-tidyData$Subject <- NULL
+tidyData$subject <- NULL
 
 # rename Group.activity & Group.subject variable names to activity and subject 
 names(tidyData)[names(tidyData)=="Group.activity"] <- "activity"
