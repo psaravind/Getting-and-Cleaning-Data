@@ -4,27 +4,24 @@ The purpose of this repository is to demonstrate how to collect, work with, and 
 
 This repository will be graded by my peers in the "Coursera Getting and Cleaning Data" Sep 2014 class.
 
-Along with this file this repository contains a R script "run_analysis.R" that takes the data from "http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones" and creates a tidy data set.
+Along with this file this repository contains a R script "run_analysis.R" that takes the data from "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip" and creates a tidy data set.
 
 # Script run_analysis.R
 
 This script does the following
 
-1. Merges the training and the test sets to create one data set
-2. Extracts only the measurements on the mean and standard deviation for each measurement
-3. Uses descriptive activity names to name the activities in the data set
-4. Appropriately labels the data set with descriptive variable names
-5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+1. Downlod and unzip the input file
+2. Merges the training and the test sets to create one data set
+3. Extracts only the measurements on the mean and standard deviation for each measurement
+4. Uses descriptive activity names to name the activities in the data set
+5. Appropriately labels the data set with descriptive variable names
+6. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
 # Source Data set
 
-Data used for this project is from data collected from wearable computing device.  More details about the data is available at 
+Data used for this project is from data collected from wearable computing device.  More details about the data is available at http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
 
-http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
-
-Data for the project was obtained from: 
-
-https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
+Data for the project was obtained from: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 
 # File and Variable Description
 
@@ -48,7 +45,7 @@ Data set in the zipped file has following
 
 - 'test/subject_test.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
 
-Features are normalized and bounded between [-1, 1] and each veature vector is a row on the text file
+Features are normalized and bounded between [-1, 1] and each feature vector is a row on the text file
 
 # Data Cleansing and transformation
 After downloading and unzipping the data set, the Train data containing 7352 observations and 561 variables was merged with test data containing 2947 observations and 561 variables.  The combined data set had total of 10299 observations with 561 variables.
@@ -57,7 +54,7 @@ Features label was cleansed my removing characters "-()" and to make the variabl
 
 This feature label was applied as column names to the merged data set.
 
-Since we are only interested in measurements on the mean and standard deviation, the merged data set was filtered to variable names that had "mean" and "std" in the label, reducing the variables to 86. 
+Since we are only interested in measurements on the mean and standard deviation, the merged data set was filtered to variable names that had "mean" and "std" in the label, reducing the variables count to 86. 
 
 Activity Id's were replaced with activity labels for better reading.
 
